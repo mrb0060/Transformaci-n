@@ -6,46 +6,66 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Trebuchet MS", Arial, sans-serif;
             background-color: #fdf6f0;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #d35400;
-            color: white;
-            padding: 20px;
+            background-color: #8ccf8a;
+            padding: 30px;
             text-align: center;
+            border-bottom: 8px dashed #f4a261;
         }
 
-        nav {
-            background-color: #f4a261;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 15px;
-            color: white;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #2f5d2f;
             font-weight: bold;
-            text-decoration: none;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 1.2rem;
+            color: #3d6b3d;
         }
 
-        main {
-            padding: 20px;
+        .banner {
+            background-color: #ffffff;
+            width: 80%;
+            margin: 30px auto;
+            padding: 25px;
+            border: 6px dashed #f4a261;
+            border-radius: 15px;
             text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            color: #2f5d2f;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            color: #555;
+            font-size: 1.1rem;
+            width: 80%;
+            margin: 0 auto 20px auto;
+        }
+
+        .banner img {
+            width: 150px;
+            margin-top: 10px;
         }
 
         iframe {
             width: 90%;
             height: 900px;
             border: none;
-            margin-top: 20px;
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
@@ -57,20 +77,19 @@
         <p>Delicias artesanales en Sevilla</p>
     </header>
 
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Tartas</a>
-        <a href="#">Bollería</a>
-        <a href="#">Repostería</a>
-        <a href="#">Contacto</a>
-    </nav>
-
-    <main>
+    <section class="banner">
         <h2>Catálogo de Productos</h2>
+        <p>
+            Descubre nuestras tartas, bollería y repostería elaboradas con ingredientes frescos
+            y mucho cariño. ¡Todo listo para endulzar tu día!
+        </p>
 
-        <!-- Aquí se carga directamente el XML transformado con el XSLT -->
-        <iframe src="pasteleria.xml"></iframe>
-    </main>
+        <!-- Ilustración del pastelito de fresa -->
+        <img src="pastelito-fresa.png" alt="Pastelito de fresa adorable">
+    </section>
+
+    <!-- Catálogo generado desde el XML + XSLT -->
+    <iframe src="pasteleria.xml"></iframe>
 
 </body>
 </html>
