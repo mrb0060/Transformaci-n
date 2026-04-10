@@ -85,7 +85,8 @@
         <xsl:for-each select="nombre | categoria | precio | stock">
           
           <td>
-            <!--XSL:VALUE-OF // -->
+            <!--XSL:VALUE-OF // Extrae y muestra el contenido del nodo o el valor de un atributo del XML 
+              select="." copia el contenido del nodo en el que se encuentra el procesador -->
             <xsl:value-of select="."/>
             <!-- Añadir símbolo € solo en precio -->
             <xsl:if test="name() = 'precio'">
