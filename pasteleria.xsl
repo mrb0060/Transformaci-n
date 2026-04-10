@@ -5,9 +5,15 @@
   
   <!-- Configuración de salida -->
   <xsl:output method="html" indent="yes"/>
+  <!-- Define la configuración del formato, por lo que primero, en el método establece el archivo de salida
+  html, y aplica la indentación del documento por medio del yes. -->
   
-  <!-- Template principal -->
+  
+  <!-- XSL:Template principal // Define las plantillas definidas por el match, que en este caso enlaza con el elemento raiz "/"
+    Esto quiere decir, que iniciará con la estructura del XML desde el inicio, primer nodo, pasteleria,
+    e irá aplicando desde ahí.-->
   <xsl:template match="/">
+    
     
     <html>
       <head>
@@ -46,8 +52,13 @@
             <th>Valoración</th>
           </tr>
           
-          <!-- APPLY-TEMPLATES + SORT -->
+          <!-- XSL: APPLY-TEMPLATES // Funciona como las agrupaciones. Siguiendo el enrutamiento
+              se aplica a los productos, y al ser específico, por cómo funciona la herencia, tiene prioridad.
+              Posteriormente en el fichero, cuando un template haga match con productos, se desarrollará el estilo-->
+          
           <xsl:apply-templates select="pasteleria/producto">
+            
+            <!--XSL: SORT // El sort se emplea para ordenar resultados-->
             <xsl:sort select="precio" data-type="number" order="ascending"/>
           </xsl:apply-templates>
           
@@ -58,11 +69,12 @@
     
   </xsl:template>
   
-  <!-- Template para cada producto -->
+  <!-- XSL:Template // Hace llamamiento de estilo para cada producto -->
   <xsl:template match="producto">
     
-    <!-- IF: solo productos con stock -->
+    <!-- XSL:IF // Este if hace que los productos cuyo stock sea mayor 0 en el xml se muestren y los que no se omitan en la página.-->
     <xsl:if test="stock &gt; 0">
+      <!-- La entidad &gt es es equivalente a mayor que -->
       
       <tr>
         
