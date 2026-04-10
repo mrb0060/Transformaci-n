@@ -2,17 +2,76 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo de Pastelería</title>
+    <title>Pastelería XSCake – Catálogo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #d35400;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f4a261;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 90%;
+            height: 900px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Enlace al XML con su XSLT -->
-    <h2>Haz clic para ver el catálogo transformado:</h2>
+    <header>
+        <h1>Pastelería XSCake</h1>
+        <p>Delicias artesanales en Sevilla</p>
+    </header>
 
-    <p>
-        <a href="pasteleria.xml">Ver catálogo de productos</a>
-    </p>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Tartas</a>
+        <a href="#">Bollería</a>
+        <a href="#">Repostería</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <main>
+        <h2>Catálogo de Productos</h2>
+
+        <!-- Aquí se carga directamente el XML transformado con el XSLT -->
+        <iframe src="pasteleria.xml"></iframe>
+    </main>
 
 </body>
 </html>
+
