@@ -24,6 +24,9 @@
           table { border-collapse: collapse; width: 80%; }
           th { background-color: #f4a261; }
           th, td { padding: 10px; text-align: center; }
+
+          <!--En este apartado definimos los estilos de las clases que posteriormente
+              asignaremos según el valor numérico de la valoración -->
           .alto { color: green; font-weight: bold; }
           .medio { color: orange; }
           .bajo { color: red; }
@@ -78,10 +81,11 @@
       
       <tr>
         
-        <!-- FOR-EACH: recorrer los campos principales -->
+        <!-- XSL: FOR-EACH // Recorre el conjunto de nodos seleccionados y a cada uno se la aplica el estilo correspondiente. -->
         <xsl:for-each select="nombre | categoria | precio | stock">
           
           <td>
+            <!--XSL:VALUE-OF // -->
             <xsl:value-of select="."/>
             <!-- Añadir símbolo € solo en precio -->
             <xsl:if test="name() = 'precio'">
