@@ -57,7 +57,7 @@
           
           <!-- XSL: APPLY-TEMPLATES // Funciona como las agrupaciones. Siguiendo el enrutamiento
               se aplica a los productos, y al ser específico, por cómo funciona la herencia, tiene prioridad.
-              Posteriormente en el fichero, cuando un template haga match con productos, se desarrollará el estilo-->
+              Posteriormente en el fichero, cuando un template haga match con productos, se desarrollará el estilo -->
           
           <xsl:apply-templates select="pasteleria/producto">
             
